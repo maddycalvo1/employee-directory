@@ -1,0 +1,15 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+.container {
+    background-color: lightskyblue;
+    align-items: center;
+  }
+  
+  .display-4 {
+    text-align: center;
+  }
+  
+  .lead {
+    text-align: center;
+  }
+  
