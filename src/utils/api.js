@@ -1,5 +1,8 @@
-import Axios from "axios";
+import axios from "axios";
 
+// eslint-disable-next-line
 export default {
-    getUsers: () => Axios.get("https://randomuser.me/api/?results=10&nat=us")
+  getEmployees: function () {
+    return axios.get("https://randomuser.me/api/?results=5&nat=us");
+  },
 };

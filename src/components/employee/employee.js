@@ -1,5 +1,5 @@
 import React from "react";
-import ".employee.css";
+import "./employee.css";
 import { Table } from "react-bootstrap";
 
 

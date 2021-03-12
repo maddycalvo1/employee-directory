@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
-import EmployeeCard from "./components/Employee";
+import Wrapper from "./components/wrapper/wrapper";
+import Title from "./components/header/header";
+import EmployeeCard from "./components/employee/employee";
 import API from "./utils/API";
 
 
 function App() {
   const [employeeArray, setEmployeeArray] = useState([])
   useEffect(() => {
-    API.getUsers()
+    API.getEmployees()
       .then(res => { setEmployeeArray(res.data.results) })
   }, [])
 
