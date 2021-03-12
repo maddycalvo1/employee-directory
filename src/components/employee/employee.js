@@ -6,7 +6,7 @@ import { Table } from "react-bootstrap";
 
 function EmployeeCard(props) {
   return (
-    <Table striped bordered hover>
+    <Table striped bordered hover size="sm">
       <thead>
         <tr>
           <th>First Name</th>
