@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Wrapper from "./components/Wrapper";
+import Title from "./components/Title";
+import EmployeeCard from "./components/Employee";
+import API from "./utils/API";
+
 
 function App() {
+  const [employeeArray, setEmployeeArray] = useState([])
+  useEffect(() => {
+    API.getUsers()
+      .then(res => { setEmployeeArray(res.data.results) })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Title>Employee Directory</Title>
+      {employeeArray.map((employee) => {
+        return <EmployeeCard
+          firstName={employee.name.first}
+          lastName={employee.name.last}
+          phone={employee.phone}
+          email={employee.email}
+        />
+      })}
+    </Wrapper>
   );
 }
 
